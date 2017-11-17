@@ -153,7 +153,7 @@ defmodule <%= web_base %>.Coherence.PasswordController do
   defp recover_password(conn, user_schema, user, params) do
     token = random_string 48
     url = router_helpers().password_url(conn, :edit, token)
-    dt = Ecto.DateTime.utc
+    dt = DateTime.utc_now
     info = Messages.backend().reset_email_sent()
 
     Config.repo.update! Controller.changeset(:password, user_schema, user,
