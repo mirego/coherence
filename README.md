@@ -230,7 +230,7 @@ end
 {:rememberable_cookie_expire_hours, 2*24},
 {:forwarded_invitation_fields, [:email, :name]}
 {:allow_silent_password_recovery_for_unknown_user, false},
-{:password_hashing_alg, Comeonin.Bcrypt}
+{:password_hashing_alg, Bcrypt}
 ```
 
 You can override this default configs. For example: you can add the following codes inside `config/config.exs`

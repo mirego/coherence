@@ -1,5 +1,10 @@
 # Coherence Changelog
 
+## Unreleased (2022-11-??)
+
+* Maintenance
+  * Update to Comeonin 5
+
 ## 0.6.2 (2020-02-17)
 
 * Bug Fixes

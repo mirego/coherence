@@ -30,7 +30,7 @@ defmodule Coherence.Schema do
   The following functions are available when `authenticatable?/0` returns true:
 
   * `checkpw/2` - Validate password.
-  * `encrypt_password/1` - encrypted a password using `<password_hashing_alg>.hashpwsalt`
+  * `encrypt_password/1` - encrypted a password using `<password_hashing_alg>.hash_pwd_salt`
   * `validate_coherence/2` - run the coherence password validations.
   * `validate_password/2` - Used by `validate_coherence for password validation`
 
@@ -292,7 +292,7 @@ defmodule Coherence.Schema do
            Keyword.get(unquote(opts), :authenticatable, true) do
         def checkpw(password, encrypted) do
           try do
-            apply(Config.password_hashing_alg(), :checkpw, [password, encrypted])
+            apply(Config.password_hashing_alg(), :verify_pass, [password, encrypted])
           rescue
             _ -> false
           end
@@ -301,7 +301,7 @@ defmodule Coherence.Schema do
         defoverridable checkpw: 2
 
         def encrypt_password(password) do
-          apply(Config.password_hashing_alg(), :hashpwsalt, [password])
+          apply(Config.password_hashing_alg(), :hash_pwd_salt, [password])
         end
 
         def validate_coherence(changeset, params) do
