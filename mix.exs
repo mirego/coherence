@@ -7,9 +7,9 @@ defmodule Coherence.Mixfile do
     [
       app: :coherence,
       version: @version,
-      elixir: "~> 1.3",
+      elixir: "~> 1.13",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:phoenix, :gettext] ++ Mix.compilers(),
+      compilers: [:phoenix] ++ Mix.compilers(),
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       docs: [extras: ["README.md"], main: "Coherence"],

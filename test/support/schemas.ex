@@ -3,6 +3,8 @@ defmodule TestCoherence.Coherence.Schemas do
 
   import Ecto.Query
 
+  alias TestCoherence.Coherence.{Rememberable, Invitation, Trackable}
+
   @user_schema Config.user_schema()
   @repo Config.repo()
 

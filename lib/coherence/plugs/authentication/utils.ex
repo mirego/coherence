@@ -6,10 +6,8 @@ defmodule Coherence.Authentication.Utils do
   @type conn :: Plug.Conn.t()
   @type t :: map()
 
-  @param_key Application.get_env(:coherence, :token_param_key, "param_key")
-
   @spec param_key() :: String.t()
-  def param_key, do: @param_key
+  def param_key, do: Application.get_env(:coherence, :token_param_key, "param_key")
 
   @spec assign_user_data(conn, t, atom) :: conn
   def assign_user_data(conn, user_data, key \\ :current_user) do
