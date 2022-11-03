@@ -52,9 +52,9 @@ jobs:
       - name: Install dependencies
         run: mix deps.get --only test
 
-      - name: Check source code format
-        run: mix format --check-formatted
-        if: ${{ matrix.lint }}
+      # - name: Check source code format
+      #   run: mix format --check-formatted
+      #   if: ${{ matrix.lint }}
 
       - name: Remove compiled application files
         run: mix clean
