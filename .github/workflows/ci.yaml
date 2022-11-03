@@ -14,10 +14,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - elixir: 1.13
-            otp-version: 23.3
-          - elixir: 1.14
-            otp-version: 25
+          - elixir: '1.13'
+            otp-version: '23.3'
+          - elixir: '1.14'
+            otp-version: '25'
             lint: lint
 
     services:
