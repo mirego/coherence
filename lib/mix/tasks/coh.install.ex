@@ -99,7 +99,7 @@ defmodule Mix.Tasks.Coh.Install do
 
   A `--user-active-field` (false) add active field to user schema and disable logins when set to false.
 
-  A `--password-hashing-alg (Comeonin.Bcrypt) add a different password hashing algorithm
+  A `--password-hashing-alg (Bcrypt) add a different password hashing algorithm
 
   ## Disable Options
 
@@ -1199,7 +1199,7 @@ defmodule Mix.Tasks.Coh.Install do
     router = opts[:router] || "#{web_base}.Router"
     web_path = opts[:web_path] || web_path()
     web_module = web_base <> ".Coherence"
-    password_hashing_alg = opts[:password_hashing_alg] || "Comeonin.Bcrypt"
+    password_hashing_alg = opts[:password_hashing_alg] || "Bcrypt"
 
     binding =
       binding
