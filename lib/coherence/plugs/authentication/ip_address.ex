@@ -39,8 +39,8 @@ defmodule Coherence.Authentication.IpAddress do
   """
 
   @behaviour Plug
-  use Bitwise
 
+  import Bitwise
   import Plug.Conn
   import Coherence.Authentication.Utils
 
