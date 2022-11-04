@@ -128,6 +128,8 @@ defmodule Plug.Adapters.CoherenceTest.Conn do
     Map.fetch!(payload, :http_protocol)
   end
 
+  def upgrade(_req, _protocol, _args), do: {:error, :not_supported}
+
   ## Private helpers
 
   defp body_or_params(nil, _query, headers), do: {"", nil, nil, headers}
