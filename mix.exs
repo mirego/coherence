@@ -50,7 +50,7 @@ defmodule Coherence.Mixfile do
 
   defp deps do
     [
-      {:ecto, "~> 3.9.5", override: true},
+      {:ecto, "~> 3.9", override: true},
       {:ecto_sql, "~> 3.4"},
       {:bcrypt_elixir, "~> 3.0"},
       {:phoenix, "~> 1.3"},
