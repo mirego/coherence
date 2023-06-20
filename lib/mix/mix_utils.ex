@@ -69,7 +69,7 @@ defmodule Coherence.Mix.Utils do
   def schema_fields(config) do
     active_field =
       if config.user_active_field? do
-        ["add :active, :boolean, default: true"]
+        ["add :active, :boolean, null: false, default: true"]
       else
         []
       end
