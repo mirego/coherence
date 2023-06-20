@@ -13,7 +13,7 @@ defmodule <%= base %>.Coherence.Trackable do
   @foreign_key_type :binary_id
   <% else %><% end %>
   schema "trackables" do
-    field(:action, :string, null: false)
+    field(:action, :string)
     field(:sign_in_count, :integer, default: 0)
     field(:current_sign_in_at, :naive_datetime)
     field(:last_sign_in_at, :naive_datetime)

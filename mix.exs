@@ -50,6 +50,7 @@ defmodule Coherence.Mixfile do
 
   defp deps do
     [
+      {:ecto, "~> 3.9", override: true},
       {:ecto_sql, "~> 3.4"},
       {:bcrypt_elixir, "~> 3.0"},
       {:phoenix, "~> 1.3"},
@@ -65,7 +66,8 @@ defmodule Coherence.Mixfile do
       {:dialyxir, "~> 1.1", only: [:dev], runtime: false},
       {:credo, "~> 1.5", only: [:dev, :test]},
       {:plug, "~> 1.11"},
-      {:jason, "~> 1.0"}
+      {:jason, "~> 1.0"},
+      {:ssl_verify_fun, "~> 1.1.6", manager: :rebar3, override: true}
     ]
   end
 

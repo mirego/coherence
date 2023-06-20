@@ -9,7 +9,7 @@ on:
 jobs:
   ci:
     name: Run tests (Elixir ${{matrix.elixir}}, OTP ${{matrix.otp}})
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     strategy:
       matrix:
@@ -18,6 +18,8 @@ jobs:
             otp: '23.3'
           - elixir: '1.14'
             otp: '25'
+          - elixir: '1.15'
+            otp: '26'
             lint: lint
 
     services:
