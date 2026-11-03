@@ -9,17 +9,17 @@ on:
 jobs:
   ci:
     name: Run tests (Elixir ${{matrix.elixir}}, OTP ${{matrix.otp}})
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
 
     strategy:
       matrix:
         include:
-          - elixir: '1.13'
-            otp: '23.3'
-          - elixir: '1.14'
+          - elixir: '1.15.4'
+            otp: '25.3.2.5'
+          - elixir: '1.18'
             otp: '25'
-          - elixir: '1.15'
-            otp: '26'
+          - elixir: '1.18'
+            otp: '27'
             lint: lint
 
     services:
@@ -35,14 +35,14 @@ jobs:
     env:
       MIX_ENV: test
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - uses: erlef/setup-beam@v1
         with:
           otp-version: ${{ matrix.otp }}
           elixir-version: ${{ matrix.elixir }}
 
       - name: Restore deps and _build cache
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
           path: |
             deps
