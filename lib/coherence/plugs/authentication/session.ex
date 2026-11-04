@@ -153,7 +153,7 @@ defmodule Coherence.Authentication.Session do
 
     rememberable? =
       if Config.has_option(:rememberable) do
-        Config.user_schema().rememberable?
+        Config.user_schema().rememberable?()
       else
         false
       end
